@@ -7,8 +7,12 @@ w:
 	$(GS) -w config
 
 
+# scss watch
+sw:
+	sass  --no-source-map site.scss:src/static/style.css --watch
 
-scss:
+# scss
+s:
 	sass  --no-source-map site.scss:src/static/style.css --watch
 
 
