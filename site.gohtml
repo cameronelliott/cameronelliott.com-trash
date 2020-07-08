@@ -21,47 +21,50 @@
   <link rel="stylesheet" type="text/css" href="{{ .Rel "static/style.css" }}">
 </head>
 <body>
-<nav class="navbar is-transparent {{ if .Page.IsHome }}is-hidden-touch{{end}}" role="navigation" aria-label="main navigation">
+<nav class="navbar is-transparent {{ if   .UrlMatches "^/$" }}is-hidden-touch{{end}}" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="{{ $.Site.Home.Permalink }}">
+    <a class="navbar-item" href="/">
       <figure class="image">
-        <img alt="" class="is-rounded" src="https://www.gravatar.com/avatar/{{ md5 $.Site.Params.email }}?s=128&d=identicon">
+        <img alt="" class="is-rounded" src="https://www.gravatar.com/avatar/E2E6D7A977F2CA2B3900E22C68655B30?s=128&d=identicon">
       </figure>
     </a>
-    <a class="navbar-item" href="{{ $.Site.Home.Permalink }}">
-      {{ $.Site.Title }}
+    <a class="navbar-item" href="/">
+      {{  .Title }}
     </a>
   </div>
+
+
+
   
   <div class="navbar-menu">
     <div class="navbar-start">
-      {{ range .Site.Taxonomies.tags }}
-      <a class="navbar-item" href="{{ .Page.Permalink }}">
-        {{ .Page.Title | humanize }}
+      {{ range .Site.Pages.Children "tags/" }}
+      <a class="navbar-item" href="{{ $.Rel .Url }}">
+        {{ .Title   }}
       </a>
       {{ end }}
     </div>
     
     <div class="navbar-end">
-      {{ range $.Site.Params.social }}
+      {{/* {{ range $.Site.Params.social }}
       <a class="navbar-item" href="{{ .url }}" rel="noopener" target="_blank">
         <span class="icon">
           <img alt="{{ .icon }}" src='{{ (resources.Get (printf  "icons/icons/svg/%s.svg" .icon)).Permalink }}'>
         </span>
       </a>
-      {{ end }}
-      <a class="navbar-item" href="mailto:{{ .Site.Params.email }}" target="_blank">
+      {{ end }} */}}
+      <a class="navbar-item" href="mailto:foo@bar.com" target="_blank">
         <span class="icon">
-          <img alt="email" src='{{ (resources.Get "icons/icons/svg/email.svg").Permalink }}'>
+          <img alt="email" src='/static/img/email.svg'>
         </span>
       </a>
-      {{ with $.Site.Home.OutputFormats.Get "rss" -}}
+      {{/* {{ with $.Site.Home.OutputFormats.Get "rss" -}}
       <a class="navbar-item" href="{{ .Permalink }}" target="_blank">
         <span class="icon">
           <img alt="rss" src='{{ (resources.Get "icons/icons/svg/rss.svg").Permalink }}'>
         </span>
       </a>
-      {{ end }}
+      {{ end }} */}}
     </div>
   </div>
 </nav>
