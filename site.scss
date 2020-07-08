@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+
+
+
+
+
+// get everything, for big css file
+@import "bulma-0.9.0/bulma.sass";
+
+// Import only what you need from Bulma
+// @import "bulma-0.9.0/sass/utilities/_all.sass";
+// @import "bulma-0.9.0/sass/base/_all.sass";
+// @import "bulma-0.9.0/sass/elements/button.sass";
+// @import "bulma-0.9.0/sass/elements/container.sass";
+// @import "bulma-0.9.0/sass/elements/title.sass";
+// @import "bulma-0.9.0/sass/form/_all.sass";
+// @import "bulma-0.9.0/sass/components/navbar.sass";
+// @import "bulma-0.9.0/sass/layout/hero.sass";
+// @import "bulma-0.9.0/sass/layout/section.sass";
+
+.content {
+  word-break: break-word;
+}
+
+.posts {
+  margin-top: 10px;
+
+  .post {
+    margin-bottom: 15px;
+  }
+}
+
+.tags-list {
+  margin-bottom: 15px;
+}
+
+.navbar-brand {
+  .navbar-item {
+    figure {
+      img {
+        width: inherit;
+      }
+    }
+  }
+}
+
+// Make code a bit smaller on mobile.
+@include touch {
+  pre {
+    font-size: $size-small;
+  }
+}
+
+
+.is-medium {
+  pre {
+    font-size: $size-normal;
+  }
+}
+
+.no-margin {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+// 7 7 2020 created from tom forbes sass file
+// Note - Ruby sass has been discontinued, but you can still clone it from GitHub:
+// git clone https://github.com/sass/ruby-sass 114
+// cd ruby-sass/bin # need to be in this directory for requires to work
+// ./sass-convert file.sass -F sass -T scss
