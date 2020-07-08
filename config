@@ -1,4 +1,4 @@
-TEMPLATES = site.tmpl
+TEMPLATES = site.gohtml
 SOURCE = src
 OUTPUT = site
 TITLE = Example Site
