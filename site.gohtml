@@ -46,7 +46,7 @@
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <figure class="image">
-        <img alt="" class="is-rounded" src="/static/img/cameronheadshot-nobg.png">
+        <img alt="" class="is-rounded" src="https://www.gravatar.com/avatar/E2E6D7A977F2CA2B3900E22C68655B30?s=128&d=identicon">
       </figure>
     </a>
     <a class="navbar-item" href="/">
@@ -87,6 +87,17 @@
 {{ end }}
 
 {{ define "footer" }}
+<footer class="footer">
+  <div class="content has-text-centered">   
+    <p>
+  <a href="/contact" target="_blank">Contact Me</a>
+      {{ if (gt .Date.Year 2000) }}
+      --- &#169; {{ template "year" .Date }}  Cameron Elliott
+      {{end}}
+    </p>
+    
+  </div>
+</footer>
 </body>
 </html>
 {{ end }}
