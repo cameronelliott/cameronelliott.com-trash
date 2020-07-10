@@ -87,17 +87,6 @@
 {{ end }}
 
 {{ define "footer" }}
-<footer class="footer">
-  <div class="content has-text-centered">   
-    <p>
-  <a href="/contact" target="_blank">Contact Me</a>
-      {{ if (gt .Date.Year 2000) }}
-      --- &#169; {{ template "year" .Date }}  Cameron Elliott
-      {{end}}
-    </p>
-    
-  </div>
-</footer>
 </body>
 </html>
 {{ end }}
@@ -105,6 +94,12 @@
 {{define "date"}}
 <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
   {{ .Format "2006, January 02" }}
+</time>
+{{end}}
+
+{{define "year"}}
+<time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ .Format "2006" }}
 </time>
 {{end}}
 
