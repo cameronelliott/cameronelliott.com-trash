@@ -97,17 +97,21 @@
 </time>
 {{end}}
 
-{{define "year"}}
-<time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
-  {{ .Format "2006" }}
-</time>
-{{end}}
-
 {{ define "page" }}{{ template "header" . }}
   {{ .Content }}
 {{ template "footer" . }}{{ end }}
 
-{{ define "post" }}
+{{/* cameron unused as now*/}}
+{{ define "posts" }}
+<div class="posts">
+  {{ range . }}
+  <div class="post">
+    <div><a href="{{ $.Rel .Url }}" class="title is-size-5">{{ .Title }}</a></div>
+    <div class="subtitle is-6">{{ template "date" .Date }}</div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
 <article>
   <header>
     <h1>{{ .Title }}</h1>
